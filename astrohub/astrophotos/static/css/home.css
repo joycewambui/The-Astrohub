@@ -1,6 +1,13 @@
 
 body{
-    background-image: url('../../media/homepage.jpg')
+    
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                rgba(0,0,0,0.55) url('../../media/homepage.jpg') no-repeat center;
+    background-size: cover;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    padding: 15px 10px 15px;
+    min-height: 640px;
 }
 h1{
     text-align: center;
@@ -14,4 +21,5 @@ h1{
     top: 50%;
     width: 100%;
     color: white;
+    
 }
