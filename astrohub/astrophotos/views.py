@@ -5,18 +5,7 @@ from django.http  import HttpResponse
 def home(request):
     
     return render(request,"home.html")
-def planets(request):
+
+def Imagestock(request):
     
-    return render(request,"category/planets.html")    
-def stars(request):
-    
-    return render(request,"category/stars.html")
-def comets(request):
-    
-    return render(request,"category/comets.html")
-def asteroids(request):
-    
-    return render(request,"category/asteroids.html")
-def auroras(request):
-    
-    return render(request, "category/auroras.html")
+    return render(request,"imagestock.html")
