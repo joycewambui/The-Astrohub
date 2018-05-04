@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,10 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Astrohub</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel ="stylesheet" href="{% static 'css/home.css'%}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
 </head>
 <body>
     <h1>Welcome to The Astrohub</h1>
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+
+{%endblock%}
 </body>
+
 </html>
