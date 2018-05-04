@@ -4,8 +4,7 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns=[
-    url('^$',views.home,name = 'home'),
-    
+    url('^$',views.home,name = 'home'),    
     url('^planets/$', views.planets, name = 'planets'),
     url('^stars/$', views.stars, name = 'stars'),
     url('^comets/$', views.comets, name = 'comets'),
