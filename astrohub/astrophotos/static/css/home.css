@@ -1,6 +1,6 @@
 
 body{
-    background-image: url('../homepage.jpg')
+    background-image: url('../../media/homepage.jpg')
 }
 h1{
     text-align: center;
@@ -13,4 +13,5 @@ h1{
     position: absolute;
     top: 50%;
     width: 100%;
+    color: white;
 }
