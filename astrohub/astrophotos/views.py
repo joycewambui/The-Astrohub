@@ -6,6 +6,6 @@ def home(request):
     
     return render(request,"home.html")
 
-def Imagestock(request):
+def imagestock(request, image_id):
     
     return render(request,"imagestock.html")

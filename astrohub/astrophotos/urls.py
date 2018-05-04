@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns=[
     url('^$',views.home,name = 'home'),    
-    url('^imagestock/$', views.planets, name = 'imagestock'),
+    url('^imagestock/$', views.imagestock, name = 'imagestock'),
     
 ]
 if settings.DEBUG:
