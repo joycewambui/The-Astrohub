@@ -2,7 +2,7 @@
 body{
     
     background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-                rgba(0,0,0,0.55) url('../../media/landing.jpg') no-repeat center;
+                rgba(0,0,0,0.55) url('../media/landing.jpg') no-repeat center;
     background-size: cover;
     text-rendering: optimizeLegibility;
     margin: 0;
