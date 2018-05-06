@@ -2,13 +2,14 @@ from django.db import models
 
 # Create your models here.
 class Location(models.Model):
-    name = models.TextField()
-    
+    place = models.TextField()
+
     def __str__(self):
-        return self.name
-    def save_location(self):
-        self.save()
+        return self.place
+class Meta:
+    ordering = ['place']
     
+  
     
 class Category(models.Model):
     name = models.TextField()
