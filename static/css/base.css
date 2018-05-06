@@ -1,0 +1,28 @@
+
+body {
+    background: #333;
+}
+
+.form-inline{
+    margin-left: 75%;
+}
+h1{
+    text-align: center;
+    color: white;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 65px;
+}
+
+.card-deck {
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 5px;
+}
+
+.view .overlay img{
+    width: 500px;
+    height: 500px;
+}
