@@ -1,14 +1,34 @@
-{% extends base.html %}
+{% load bootstrap4 %}
+ {% load static%}
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8"> {% if title %}
+    <title>The Astrohub - {{title}}</title>
+    {% else %}
+    <title> The Astrohub</title>
+    {% endif %} {% block styles %} {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+     {% endblock %}
+</head>
+<body>
 {% block content %}
 
-<form method = "get">
+<form method = "get" action= {% url 'search' %}>
    {{ filter.form.as_p}} 
-   <button type="submit">Search</button>
+   <button type="submit">Search The Great Beyond</button>
 </form>
 <ul>
     {% for image in filter.qs %}
-    <li>{{ image.image.url }} - {{ image.title }} {{image.description}}</li>
+    <li><img src ="{{ image.image.url }}" class="img-responsive" style="width:100%">  {{ image.title }} {{image.description}}</li>
+    <br>
+    <br>
     {% endfor %}
     </ul>
     {% endblock %}
+</body>
+
+</html>

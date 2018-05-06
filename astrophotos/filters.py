@@ -1,4 +1,4 @@
-from django.contrib.auth.models import Image
+from .models import Image
 import django_filters
 
 class ImageFilter(django_filters.FilterSet):

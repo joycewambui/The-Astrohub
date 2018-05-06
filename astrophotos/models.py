@@ -59,9 +59,6 @@ class Image(models.Model):
     def get_image_by_id(id):
         pass
     
-    @classmethod
-    def search_by_category(cls,search_term):
-        selected_category = cls.objects.filter(category__icontains=search_term)
-        return selected_category
+     
         
 
