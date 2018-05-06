@@ -21,11 +21,11 @@ class Category(models.Model):
     
 class Image(models.Model):
     image = models.ImageField(upload_to ='images/')
-    image_title = models.TextField()
-    image_location = models.ForeignKey(Location)    
-    image_description = models.TextField()
-    image_category = models.ForeignKey(Category)
+    title = models.TextField()
+    location = models.ForeignKey(Location)    
+    description = models.TextField()
+    category = models.ForeignKey(Category)
     
     def __str__(self):
-        return self.image_title
+        return self.title
 
