@@ -8,7 +8,8 @@
     <title>The Astrohub - {{title}}</title>
     {% else %}
     <title> The Astrohub</title>
-    {% endif %} {% block styles %} {% bootstrap_css %}
+    {% endif %} {% block styles %} 
+    {% bootstrap_css %}
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
@@ -23,7 +24,9 @@
 </form>
 <ul>
     {% for image in filter.qs %}
-    <li><img src ="{{ image.image.url }}" class="img-responsive" style="width:100%">  {{ image.title }} {{image.description}}</li>
+    <li><img src ="{{ image.image.url }}" class="img-responsive" style="width:100%"> <br>
+          {{ image.title }} <br> <br>
+          {{image.description}}</li>
     <br>
     <br>
     {% endfor %}
