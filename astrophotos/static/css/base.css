@@ -14,7 +14,7 @@ body {
 }
 h1{
     text-align: center;
-    color: white;
+    color: black;
     text-align: center;
     font-family: 'Cormorant Garamond', serif;
     font-size: 65px;
@@ -28,7 +28,35 @@ h1{
     grid-gap: 1px;
 }
 
+.column {
+    float: left;
+    width: 25%;
+}
 .view .overlay img{
     width: 500px;
     height: 500px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+    .column {
+        width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.row {
+    margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+    padding: 8px;
 }

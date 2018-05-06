@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Location(models.Model):
     name = models.TextField()
@@ -28,7 +29,7 @@ class Image(models.Model):
     category = models.ForeignKey(Category)
     
     def __str__(self):
-        return self.title
+        return self.category
     
     @classmethod
     def my_images(cls):
@@ -54,8 +55,8 @@ class Image(models.Model):
         pass
     
     @classmethod
-    def search_by_category(cls, search_category):
-        category = cls.objects.filter(category_name_icontains=search_category)
-        return category
+    def search_by_category(cls,search_term):
+        selected_category = cls.objects.filter(category__icontains=search_term)
+        return selected_category
         
 

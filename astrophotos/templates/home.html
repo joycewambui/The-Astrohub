@@ -6,11 +6,14 @@
 
 <div class="container">
     <div class="row">
+       
         {%for image in images %}
         <div class="col-md-4">
             <div class="card card-cascade wider reverse my-4">
+                
                 <div class="view overlay">
-                    <img src="{{ image.image.url }}" class="img-fluid" style="width:100%">
+                    <img src="{{ image.image.url }}" class="img-responsive" style="width:100%">
+                    
                     <a href="#!">
                         <div class="mask rgba-white-slight"></div>
                     </a>
@@ -24,7 +27,7 @@
                     </h4>
                     <p class="card-text" class="badge  badge-pill  badge-secondary"> {{image.location}} </p>
                     <p class="card-text" class="badge  badge-pill  badge-secondary"> {{image.category}} </p>
-                    <a href="image/{{image.id}}" class="btn" style="background-color: #4ba6e7;color:white;">Click here</a>
+                    <a href="image/{{image.id}}" style="color:Blue;font-weight:bold;">Read More</a>
 
                 </div>
 
@@ -33,7 +36,7 @@
 
 
         {% endfor %}</div>
-
+</div>
 </div>
 </div>
 {%endblock%}
