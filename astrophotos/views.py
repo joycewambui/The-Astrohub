@@ -6,10 +6,15 @@ from .models import Image
 # Create your views here.
 def home(request):
     
-    return render(request,"home.html")
-
-def images(request):
-    
     images =Image.objects.all()    
     
-    return render(request,"images.html", {"images": images})
+    return render(request,"home.html", {"images": images})
+
+def images(request, image_id):
+     try:
+           images = Image.objects.get(id = image_id)
+     except Image.DoesNotExist:
+           raise Http404()
+
+     return render(request,"images.html", {"images":images})
+     
