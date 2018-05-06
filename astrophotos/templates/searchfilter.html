@@ -1,0 +1,14 @@
+{% extends base.html %}
+
+{% block content %}
+
+<form method = "get">
+   {{ filter.form.as_p}} 
+   <button type="submit">Search</button>
+</form>
+<ul>
+    {% for image in filter.qs %}
+    <li>{{ image.image.url }} - {{ image.title }} {{image.description}}</li>
+    {% endfor %}
+    </ul>
+    {% endblock %}

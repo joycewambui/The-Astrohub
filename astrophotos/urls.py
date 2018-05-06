@@ -7,7 +7,7 @@ urlpatterns=[
         
     url('^$', views.home, name = 'home'),
     url(r'^image/(\d+)', views.images, name='image'),
-    url(r'^search/', views.search_results, name='search_results'),
+    url(r'^search/', views.search, name='search'),
 
     
 ]

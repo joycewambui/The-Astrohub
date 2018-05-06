@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http  import Http404
-from .models import Image,Category,Location
+from .models import Image
+from .filters import ImageFilter
+
 
 
 # Create your views here.
@@ -18,15 +20,7 @@ def images(request, image_id):
 
      return render(request,"images.html", {"images":images})
 
-
-def search_results(request):
-    if 'image' in request.GET and request.GET["image"]:
-        search_term = request.GET.get('image') 
-        searched_images = Image.search_by_category(search_term)
-        message = f"{search_term}"
-
-        return render(request, 'search.html', {"message":message,"images": searched_images})
-        
-    else:
-        message = "You haven't searched for any term"
-        return render(request, 'search.html',{"message":message})
+def search(request):
+    image_list = Image.objects.all()
+    image_filter = ImageFilter(request.GET, queryset=image_list)
+    return render(request, 'searchfilter.html',{'filter': image_filter})
