@@ -29,4 +29,33 @@ class Image(models.Model):
     
     def __str__(self):
         return self.title
+    
+    @classmethod
+    def my_images(cls):
+        images = cls.objects.all()
+        return images
+    
+    def delete_images(self):
+        self.remove()
+    
+    def save_images(self):
+        self.save()
+    
+    def search_image(category):
+        pass
+
+    def filter_by_location(location):
+        pass
+
+    def update_image(self, id):
+        pass
+
+    def get_image_by_id(id):
+        pass
+    
+    @classmethod
+    def search_by_category(cls, search_category):
+        category = cls.objects.filter(category_name_icontains=search_category)
+        return category
+        
 
