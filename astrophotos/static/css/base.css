@@ -1,6 +1,6 @@
 
 body {
-    background: #333;
+    background: #fff;
 }
 
 .form-inline{
@@ -19,7 +19,7 @@ h1{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 5px;
+    grid-gap: 1px;
 }
 
 .view .overlay img{

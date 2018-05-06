@@ -2,14 +2,14 @@ from django.db import models
 
 # Create your models here.
 class Location(models.Model):
-    place = models.TextField()
+    name = models.TextField()
 
     def __str__(self):
-        return self.place
-class Meta:
-    ordering = ['place']
+        return self.name
+
     
-  
+    class Meta:
+        ordering = ['name']
     
 class Category(models.Model):
     name = models.TextField()
