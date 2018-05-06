@@ -4,8 +4,8 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns=[
-    url('^$',views.home,name = 'home'),    
-    url('^images/$', views.images, name = 'images'),
+        
+    url('^$', views.images, name = 'images'),
     
 ]
 if settings.DEBUG:
