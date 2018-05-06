@@ -1,28 +1,36 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Astrohub</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel ="stylesheet" href="{% static 'css/home.css'%}">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
-</head>
-<body>
-    <h1>Welcome to The Astrohub</h1>
-    {% block content %}
-    
-       <a href="{% url 'images' %}" class="button">Images</a>
-     
-        
-{% block scripts %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-{%endblock%}
+{%extends 'all-astro/base.html'%}
+ {%block content%} 
+ {{block.super}}
+<h1>Welcome to The Astrohub</h1>
 
-{%endblock%}
-</body>
+<div class="container">
+    <div class="row">
+        {%for image in images %}
+        <div class="col-md-4">
+            <div class="card card-cascade wider reverse my-4">
+                <div class="view overlay">
+                    <img src="{{ image.image.url }}" class="img-fluid" style="height:250px;width:500px">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body text-center">
+                    <h4 class="card-title">
+                        <strong>
+                            <h2>{{ image.image_title }}</h2>
+                        </strong>
+                    </h4>
+                    <p class="card-text" class="badge  badge-pill  badge-secondary"> {{image.image_location}} </p>
+                    <p class="card-text" class="badge  badge-pill  badge-secondary"> {{image.image_category}} </p>
+                    <a href="image/{{image.id}}" class="btn" style="background-color: #4ba6e7;color:white;">Click here</a>
 
-</html>
+                </div>
+
+            </div>
+        </div>
+
+
+        {% endfor %}</div>
+
+</div>
+{%endblock%}
