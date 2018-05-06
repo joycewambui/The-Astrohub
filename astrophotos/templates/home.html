@@ -43,6 +43,9 @@
                     </div>
                     <div class="modal-body">
                     <img src="{{ image.image.url }}" class="img-responsive" style="width:100%">
+                    <p>Location:{{image.location}}</p><br>
+                    <p>Category: {{image.category}}</p><br>
+                    <p>Description:<br>{{image.description}}</p>
                     </div>
                     
                     <div class="modal-footer">
@@ -57,11 +60,7 @@
                     
                     
                       
-                    
-                    <p class="card-text" class="badge  badge-pill  badge-secondary"> {{image.location}} </p>
-                    <p class="card-text" class="badge  badge-pill  badge-secondary"> {{image.category}} </p>
-                    
-
+                   
                      
                 
                 </div>
