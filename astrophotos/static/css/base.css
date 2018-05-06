@@ -1,6 +1,12 @@
 
 body {
-    background: #fff;
+    background-color: #f1f1f1;
+     font-family: 'Cormorant Garamond', serif;
+
+}
+.main {
+    max-width: 1000px;
+    margin: auto;
 }
 
 .form-inline{
