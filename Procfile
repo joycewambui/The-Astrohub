@@ -1,1 +1,1 @@
-web: gunicorn​ ​astrohub.wsgi --log-file -
+web: gunicorn​ ​astrophotos.wsgi 
