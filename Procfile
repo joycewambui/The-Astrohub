@@ -1,1 +1,1 @@
-web: gunicorn​ ​astrophotos.wsgi 
+web:gunicorn​ ​astrohub.wsgi 
