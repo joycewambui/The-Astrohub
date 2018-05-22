@@ -1,70 +1,81 @@
 {%extends 'all-astro/base.html'%}
- {%block content%} 
+{% load bootstrap4 %} 
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <link rel="stylesheet" href="{% static 'css/home.css' %}">
+ {% block content %}
+
  {{block.super}}
- <div class ="main">
-<h1>Welcome to The Astrohub</h1>
+ </head>
+ <body>
 <div style="text-align: center">
-{% include "searchfilter.html" %}
+<h1>Welcome to The Astrohub</h1>
+<p>”I didn’t feel like a giant. I felt very, very small.”<br>
+ -- Neil Armstrong on looking back at the Earth from the Moon in July 1969.</p>
+{% include "searchfilter.html" %}  
 </div>
 
-<div class="container">
-    <div class="member">
+ {% for image in images %}    
+{{ forloop.parentloop.counter }}
+
     
-     
+    <!-- IMAGE WAS HERE!!--> 
+     <div class="container">
+        <div class="card">
+  
+  <div class="card-body">
     
-     {%for image in images %} 
-    
-        
-        
-            <div class="card card-cascade wider reverse my-4">
+     <div id="each-image">
+<a href="{{image.image_id}}">             
                 
-                <div class="view overlay">
-                    <div class="row">
-                        <div class="column">
-                        <img src="{{ image.image.url }}" class="img-responsive" style="width:100%">
+                   
+                       
+<img src="{{ image.image.url }}" class="img-responsive" style="width:100%">
                         
-                    <a href="#!">
-                        <div class="mask rgba-white-slight"></div>
-                    </a>
-                    </div>
+                   <a href="#!">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+
                     
                     <div class="card-body text-center">
                         <h4 class="card-title">
-        <!-- Button trigger modal -->
-    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">
-        See More
-    </button>
-        
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="image">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle"><strong><h2>{{ image.title }}</h2></strong></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                            <!-- Button trigger modal -->
+                            
+                            <button id="trigger-modal" class="btn btn-info" data-toggle="modal" data-url="{{image.image.url}}"
+                                data-image-name="{{image.title}}" data-description="{{image.description}}" data-location="{{image.location}}"
+                                data-toggle="modal" data-target="#myModal">
+                                See More
+                            </button>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                    <img src="{{ image.image.url }}" class="img-responsive" style="width:100%">
-                    <p>Location:{{image.location}}</p><br>
-                    <p>Category: {{image.category}}</p><br>
-                    <p>Description:<br>{{image.description}}</p>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                    </button>                    
+                                    <h4 class="modal-title" id="myModalLabel"></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <img id="modal-image" src="" class="img-responsive" class="showimage" alt="Image" style="width:50%;height:50%; ;padding-top:5%;margin-left:5vh;">
+                                    </a>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="modal-footer">
-
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
+                    </p>
                 </div>
-            </div>
-        </div>
-       
-                    
-                    
-                    
-                      
-                   
+                </div>
+                
+            {% endfor %}
                      
                 
                 </div>
@@ -73,12 +84,13 @@
         </div>
 
 </div>
-        {% endfor %}
+        
+        {% endblock %}
     </div>
         </div>
         </div>
+    </div>
 </div>
 </div>
 </div>
-
-{%endblock%}
+</body>

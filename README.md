@@ -23,24 +23,11 @@ python3.6 -m venv virtual
  source virtual/bin/activate
 
  ```
-* Download pillow
+* Download all modules
 ```
- pip install pillow
-
- ```
-* Download Django 1.11 
-```
-pip install Django==1.11
+ pip install -r requirements.txt
 
 ```
-* Download Bootstrap 
-```
- pip install django-bootstrap4
-
- ```
-
-
-
 ### Running the appication
 
 * Running the server
@@ -52,7 +39,7 @@ python3.6 manage.py runserver
 
 * Deploy on heroku
 
-* <a href="https://simpleisbetterthancomplex.com/tutorial/2016/08/09/how-to-deploy-django-applications-on-heroku.html">This</a> is a handy guide that will take you through the process.
+* <a href="">This</a> is a handy guide that will take you through the process.
 
 ## Built With
 
